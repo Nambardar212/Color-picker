@@ -41,7 +41,23 @@
     margin-left: 40px;
     cursor: pointer;
 }
-
+#selector {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 40px;
+}
+#selector h3{
+    background-image: linear-gradient(to right, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+#opacity-select {
+    color: rgb(192, 31, 31);
+    margin-left: 50px;
+    cursor: pointer;
+}
 #text{
     display: flex;
     flex-direction: row;
@@ -256,7 +272,3 @@ button:hover .myclip5{
     opacity: 1;
 }
 
-.txtColor {
-    font-weight: bolder;
-    color: red;
-}

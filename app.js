@@ -4,6 +4,7 @@ let rgb = document.getElementById('rgb')
 let rgba = document.getElementById('rgba')
 let hsl = document.getElementById('hsl')
 let hsla = document.getElementById('hsla')
+let scale = document.getElementById('opacity-select')
 
 var colorPicker = new iro.ColorPicker('#picker', {
     width: 180, 
@@ -16,27 +17,27 @@ colorPicker.on('color:change' , function(color) {
     let a = color.hexString
     hex.style.color = 'black'
     hex.style.fontWeight = 'normal'
-    hex.innerHTML = `${a} <button onclick="Myfuc1()" onmouseout="outfunc1()"><i class="fa-solid fa-copy"></i><span class="myclip1" id="myToolTip1"></span></button>`
+    hex.innerHTML = `${a} <button onclick="Myfuc1()"><i class="fa-solid fa-copy"></i><span class="myclip1" id="myToolTip1"></span></button>`
 
     let b = color.rgbString
     rgb.style.color = 'black'
     rgb.style.fontWeight = 'normal'
-    rgb.innerHTML = `${b} <button onclick="Myfuc2()" onmouseout="outfunc2()"><i class="fa-solid fa-copy"></i><span class="myclip2" id="myToolTip2"></span></button>`
+    rgb.innerHTML = `${b} <button onclick="Myfuc2()"><i class="fa-solid fa-copy"></i><span class="myclip2" id="myToolTip2"></span></button>`
 
     let c = color.rgbaString
     rgba.style.color = 'black'
     rgba.style.fontWeight = 'normal'
-    rgba.innerHTML = `${c} <button onclick="Myfuc3()" onmouseout="outfunc3()"><i class="fa-solid fa-copy"></i><span class="myclip3" id="myToolTip3"></span></button>`
+    rgba.innerHTML = `${c} <button onclick="Myfuc3()"><i class="fa-solid fa-copy"></i><span class="myclip3" id="myToolTip3"></span></button>`
 
     let d = color.hslString
     hsl.style.color = 'black'
     hsl.style.fontWeight = 'normal'
-    hsl.innerHTML = `${d} <button onclick="Myfuc4()" onmouseout="outfunc4()"><i class="fa-solid fa-copy"></i><span class="myclip4" id="myToolTip4"></span></button>`
+    hsl.innerHTML = `${d} <button onclick="Myfuc4()"><i class="fa-solid fa-copy"></i><span class="myclip4" id="myToolTip4"></span></button>`
 
     let e = color.hslaString
     hsla.style.color = 'black'
     hsla.style.fontWeight = 'normal'
-    hsla.innerHTML = `${e} <button onclick="Myfuc5()" onmouseout="outfunc5()"><i class="fa-solid fa-copy"></i><span class="myclip5" id="myToolTip5"></span></button>`
+    hsla.innerHTML = `${e} <button onclick="Myfuc5()"><i class="fa-solid fa-copy"></i><span class="myclip5" id="myToolTip5"></span></button>`
 })
 
 
@@ -167,6 +168,25 @@ function Myfuc5() {
     tool4.innerHTML = ''
 }
 
+scale.addEventListener('change', () => {
+    let val = scale.value
+    let b = rgb.innerText
+    let str = ''
+    for(let i = 0; i < b.length - 2; i++) {
+        str = str + b.charAt(i)
+    }
+    str = str + ',' + ' ' + val + ')'
+    colorIndicator.style.backgroundColor = str
+    rgba.innerHTML = `${str} <button onclick="Myfuc3()"><i class="fa-solid fa-copy"></i><span class="myclip3" id="myToolTip3"></span></button>`
+
+    let bh = hsl.innerText
+    let strh = ''
+    for(let j = 0; j < bh.length - 2; j++) {
+        strh = strh + bh.charAt(j)
+    }
+    strh = strh + ',' + ' ' + val + ')'
+    hsla.innerHTML = `${strh} <button onclick="Myfuc5()"><i class="fa-solid fa-copy"></i><span class="myclip5" id="myToolTip5"></span></button>`
+})
 
  
 
