@@ -178,6 +178,8 @@ scale.addEventListener('change', () => {
     str = str + ',' + ' ' + val + ')'
     colorIndicator.style.backgroundColor = str
     rgba.innerHTML = `${str} <button onclick="Myfuc3()"><i class="fa-solid fa-copy"></i><span class="myclip3" id="myToolTip3"></span></button>`
+    rgba.style.color = 'black'
+    rgba.style.fontWeight = 'normal'
 
     let bh = hsl.innerText
     let strh = ''
@@ -186,6 +188,15 @@ scale.addEventListener('change', () => {
     }
     strh = strh + ',' + ' ' + val + ')'
     hsla.innerHTML = `${strh} <button onclick="Myfuc5()"><i class="fa-solid fa-copy"></i><span class="myclip5" id="myToolTip5"></span></button>`
+    hsla.style.color = 'black'
+    hsla.style.fontWeight = 'normal'
+
+    hex.style.color = 'black'
+    hex.style.fontWeight = 'normal'
+    rgb.style.color = 'black'
+    rgb.style.fontWeight = 'normal'
+    hsl.style.color = 'black'
+    hsl.style.fontWeight = 'normal'
 })
 
  
