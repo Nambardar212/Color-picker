@@ -272,3 +272,28 @@ button:hover .myclip5{
     opacity: 1;
 }
 
+@media (max-width: 830px) {
+    .container {
+        flex-direction: column;
+        margin: 70px;
+    }
+    #picker {
+        margin: 20px;
+    }
+    #selector {
+        margin: 10px;
+        text-align: center;
+    }
+    #selector h3 {
+        font-size: 0.8rem;
+    }
+    #opacity-select {
+        margin-left: 0px;
+    }
+    #right {
+        width: 199px;
+    }
+    #left {
+        margin: -14px;
+    }
+}
