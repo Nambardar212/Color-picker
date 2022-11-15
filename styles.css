@@ -296,4 +296,8 @@ button:hover .myclip5{
     #left {
         margin: -14px;
     }
+    h1 {
+        margin-right: 15px;
+        /* text-align: none; */
+    }
 }
